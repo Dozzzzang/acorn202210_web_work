@@ -14,13 +14,13 @@
 		<form action="login.jsp" method="post">
 			<div>
 				<label class="form-label" for="id">아이디</label>
-				<input class="form-control" type="text" name="id" id="id"/>
+				<input class="form-control" type="text" name="id" id="id" />
 			</div>
 			<div>
 				<label class="form-label" for="pwd">비밀번호</label>
-				<input class="form-control" type="password" name="pwd" id="pwd"/>
+				<input class="form-control" type="password" name="pwd" id="pwd" />
 			</div>
-			<button class="btn btn-primary" type="submit">로그인</button>
+			<button class="btn btn-primary" type="submit" >로그인</button>
 		</form>
 	</div>
 </body>

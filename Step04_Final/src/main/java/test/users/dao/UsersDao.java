@@ -32,7 +32,7 @@ public class UsersDao {
 			//Connection Pool 에서 Connection 객체를 하나 얻어온다.
 			conn = new DbcpBean().getConn();
 			//실행할 sql 문의 뼈대 구성하기
-			String sql = "SELECT id"
+			String sql = "SELECT *"
 					+ " FROM users"
 					+ " WHERE id=? AND pwd=?";
 			pstmt = conn.prepareStatement(sql);
