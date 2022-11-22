@@ -8,7 +8,7 @@
 		//로그인 후에 인덱스 페이지로 갈수 있도록 한다. 
 		String cPath=request.getContextPath();
 		url=cPath+"/index.jsp";
-	}	
+	}
 %>
 <!DOCTYPE html>
 <html>
@@ -21,7 +21,7 @@
 <body>
 	<div class="container">
 		<h1>로그인 폼</h1>
-		<form action="login.jsp" method="post">
+		<form action="login.jsp" method="post" accept-charset="utf-8">
 			<!-- 로그인 성공후 어디로 갈지에 대한 정보를 url 이라는 파라미터 명으로 같이 전송되도록 한다. -->
 			<input type="hidden" name="url" value="<%=url %>" />
 			<div>
