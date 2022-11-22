@@ -5,7 +5,7 @@
     pageEncoding="UTF-8"%>
 <%
 	//파라미터를 추출하기 전에 인코딩을 먼저 해줘야 한글이 깨지지 않는다
-	request.setCharacterEncoding("UTF-8");
+	//request.setCharacterEncoding("UTF-8");
 	//로그인후 가야할 목적지 정보
 	String url = request.getParameter("url");
 	//로그인 실패를 대비해서 목적지 정보를 인코딩한 결과도 준비한다.
