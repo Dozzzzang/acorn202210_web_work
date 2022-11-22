@@ -19,6 +19,42 @@ public class UsersDao {
 		return dao;
 	}
 	
+	//비밀 번호를 수정하는 메소드 
+	public boolean updatePwd(UsersDto dto) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		int rowCount = 0;
+		try {
+			conn = new DbcpBean().getConn();
+			//실행할 sql 문
+			String sql = "UPDATE users"
+					+ " SET pwd=?"
+					+ " WHERE id=? AND pwd=?";
+			pstmt = conn.prepareStatement(sql);
+			//? 에 값 바인딩하기
+			pstmt.setString(1, dto.getNewPwd());
+			pstmt.setString(2, dto.getId());
+			pstmt.setString(3, dto.getPwd());
+			//insert, update, delete 를 수행하고 변화된 row의 갯수를 리턴받기
+			rowCount = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (Exception e) {
+			}
+		}
+		if (rowCount > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 	//인자로 전달되는 dto 에 있는 아이디와, 비밀번호를 이용해서 해당 정보가 유효한 정보인지 여부를 리턴하는 메소드
 	public boolean isValid(UsersDto dto) {
 		
