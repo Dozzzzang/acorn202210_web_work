@@ -74,14 +74,14 @@
 	    //프로필 이미지를 선택하면(바뀌면) 실행할 함수 등록
 	    document.querySelector("#image").addEventListener("change", function(){
 	        //ajax 전송할 폼의 참조값 얻어오기
-	         const form=document.querySelector("#imageForm");
-	         //gura_util.js 에 있는 함수를 이용해서 ajax 전송하기 
-	         ajaxFormPromise(form)
-	         .then(function(response){
-	            return response.json();
-	         })
-	         .then(function(data){
-	            console.log(data);
+			const form=document.querySelector("#imageForm");
+			//gura_util.js 에 있는 함수를 이용해서 ajax 전송하기 
+			ajaxFormPromise(form)
+			.then(function(response){
+			   return response.json();
+			})
+			.then(function(data){
+				console.log(data);
 	            // input name="profile" 요소의 value 값으로 이미지 경로 넣어주기
 	            document.querySelector("input[name=profile]").value=data.imagePath;
 	            
