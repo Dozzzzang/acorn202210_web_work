@@ -28,12 +28,13 @@ public class UsersDao {
 			conn = new DbcpBean().getConn();
 			//실행할 sql 문
 			String sql = "UPDATE users"
-					+ "	SET email=?"
+					+ "	SET email=?, profile=?"
 					+ "	WHERE id=?";
 			pstmt = conn.prepareStatement(sql);
 			//? 값을 바인딩 할게 있으면 바인딩하기
 			pstmt.setString(1, dto.getEmail());
-			pstmt.setString(2, dto.getId());
+			pstmt.setString(2, dto.getProfile());
+			pstmt.setString(3, dto.getId());
 			//insert, update, delete 를 수행하고 변화된 row의 갯수를 리턴받기
 			rowCount = pstmt.executeUpdate();
 		} catch (Exception e) {
