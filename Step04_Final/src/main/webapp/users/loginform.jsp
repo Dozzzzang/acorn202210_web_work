@@ -33,6 +33,7 @@
 				<input class="form-control" type="password" name="pwd" id="pwd" />
 			</div>
 			<button class="btn btn-primary" type="submit" >로그인</button>
+			<a href="${pageContext.request.contextPath }/users/singnup_form.jsp" class="btn btn-info" style="float:right">회원가입</a>
 		</form>
 	</div>
 </body>
