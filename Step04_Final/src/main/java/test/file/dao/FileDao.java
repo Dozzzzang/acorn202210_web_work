@@ -192,7 +192,7 @@ public class FileDao {
 					+ " FROM"
 					+ " (SELECT result1.*, ROWNUM AS rnum"
 					+ " FROM"
-					+ "      (SELECT num, writer, title, orgFileName, fileSize, regdate"
+					+ "      (SELECT num, writer, title, orgFileName, fileSize, TO_CHAR(regdate, 'YYYY.MM.DD HH24:MI') AS regdate"
 					+ "      FROM board_file"
 					+ "      ORDER BY num DESC) result1)"
 					+ " WHERE rnum BETWEEN ? AND ?";
