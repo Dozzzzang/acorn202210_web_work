@@ -30,8 +30,53 @@ public class CafeDao {
 		return dao;
 	}
 	
-	public List<CafeDto> getList(){
-	      
+	//글 하나의 정보를 리턴해주는 메소드
+	public CafeDto getData(int num) {
+		CafeDto dto=null;
+		//필요한 객체를 담을 지역변수를 미리 만들어 둔다.
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			//Connection Pool 에서 Connection 객체를 하나 얻어온다.
+			conn = new DbcpBean().getConn();
+			//실행할 sql 문의 뼈대 구성하기
+			String sql = "SELECT writer, title, content, viewCount, regdate"
+					+ " FROM board_cafe"
+					+ " WHERE num=?";
+			pstmt = conn.prepareStatement(sql);
+			//sql 문의 ? 에 바인딩 할게 있으면 한다.
+			pstmt.setInt(1, num);
+			//SELECT 문을 수행하고 결과값을 받아온다.
+			rs = pstmt.executeQuery();
+			//반복문 돌면서 ResultSet 에서 필요한 값을 얻어낸다.
+			if (rs.next()) {
+				dto=new CafeDto();
+	            dto.setNum(num);
+	            dto.setWriter(rs.getString("writer"));
+	            dto.setTitle(rs.getString("title"));
+	            dto.setContent(rs.getString("content"));
+	            dto.setViewCount(rs.getInt("viewCount"));
+	            dto.setRegdate(rs.getString("regdate"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close(); //Connection Pool 에 Connection 반납하기
+			} catch (Exception e) {
+			}
+		}
+		return dto;
+	}
+	
+	//글 목록 얻어오기
+	public List<CafeDto> getList(){	      
 		List<CafeDto> list=new ArrayList<CafeDto>();
 	      
 	    Connection conn = null;
