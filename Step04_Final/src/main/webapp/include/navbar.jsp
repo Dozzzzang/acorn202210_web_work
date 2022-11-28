@@ -28,7 +28,7 @@
     		<span class="navbar-toggler-icon"></span>
     	</button>
     	<!-- 화면이 좁으면 숨겨지는 요소들은 아래의 div 안에 넣어두면 된다. -->
-    	<div class="collapse navbar-collapse" id="navbarNav">
+    	<div class="collapse navbar-collapse" id="navbarNav" style="text-align: center;">
     		<ul class="navbar-nav">
     			<li class="nav-item">
     				<a class="nav-link <%= thisPage.equals("file") ? "active" : "" %>" href="${pageContext.request.contextPath }/file/list.jsp">자료실</a>

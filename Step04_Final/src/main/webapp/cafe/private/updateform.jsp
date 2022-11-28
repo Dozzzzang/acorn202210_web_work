@@ -41,8 +41,8 @@
 				<label for="content">내용</label>
 				<textarea name="content" id="content"><%=dto.getContent() %></textarea>
 			</div>
-			<button type="submit" onclick="submitContents(this)">수정확인</button>
-			<button type="reset">취소</button>
+			<button type="submit" onclick="submitContents(this)" class="btn btn-outline-primary">수정확인</button>
+			<button type="reset" class="btn btn-outline-danger">취소</button>
 		</form>
 	</div>
 		<%--

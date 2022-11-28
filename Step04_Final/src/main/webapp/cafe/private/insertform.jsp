@@ -30,7 +30,7 @@
 				<label for="content">내용</label>
 				<textarea name="content" id="content" rows="10"></textarea>
 			</div>
-			<button type="submit" onclick="submitContents(this)">저장</button>
+			<button type="submit" onclick="submitContents(this)" class="btn btn-outline-primary">저장</button>
 		</form>
 	</div>
 	<%--
