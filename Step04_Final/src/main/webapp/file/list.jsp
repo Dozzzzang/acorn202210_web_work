@@ -69,9 +69,9 @@
 	</jsp:include>
 	<div class="container">		
 		<h3>자료실 목록 보기</h3>
-		<a href="${pageContext.request.contextPath }/file/private/upload_form.jsp" class="btn btn-outline-warning">업로드 하기</a>
+		<a href="${pageContext.request.contextPath }/file/private/upload_form.jsp" class="btn btn-outline-warning" style="float: right;">업로드 하기</a>
 		<table class="table table-striped">
-			<thead class="table-dark">
+			<thead class="table-secondary">
 				<tr>
 					<th>번호</th>
 					<th>작성자</th>

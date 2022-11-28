@@ -65,19 +65,19 @@
 		<h3>글 상세 보기</h3>
 		<table class="table table-stripe">
 			<tr>
-				<th class="table-dark">글번호</th>
+				<th class="table-secondary">글번호</th>
 				<td><%=dto.getNum() %></td>
 			</tr>
 			<tr>
-				<th class="table-dark">작성자</th>
+				<th class="table-secondary">작성자</th>
 				<td><%=dto.getWriter() %></td>
 			</tr>			
 			<tr>
-				<th class="table-dark">조회수</th>
+				<th class="table-secondary">조회수</th>
 				<td><%=dto.getViewCount() %></td>
 			</tr>
 			<tr>
-				<th class="table-dark">작성일</th>
+				<th class="table-secondary">작성일</th>
 				<td><%=dto.getRegdate() %></td>
 			</tr>			
 			<tr>

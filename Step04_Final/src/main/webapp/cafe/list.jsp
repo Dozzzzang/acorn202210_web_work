@@ -61,9 +61,9 @@
 	</jsp:include>
 	<div class="container">		
 		<h3>글 목록 보기</h3>
-		<a href="${pageContext.request.contextPath }/cafe/private/insertform.jsp" class="btn btn-outline-warning">새글 작성</a>
+		<a href="${pageContext.request.contextPath }/cafe/private/insertform.jsp" class="btn btn-outline-warning" style="float: right;">새글 작성</a>
 		<table class="table table-stripe">
-			<thead class="table-dark">
+			<thead class="table-secondary">
 				<tr>
 					<th>글번호</th>
 					<th>작성자</th>

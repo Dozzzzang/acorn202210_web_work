@@ -26,6 +26,9 @@
         border: 1px solid #cecece;
         border-radius: 50%;
    	}
+   	div{
+		text-align: center;
+	}
 </style>
 </head>
 <body>
@@ -34,7 +37,7 @@
 		<jsp:param value="" name="thisPage"/>
 	</jsp:include>
 	<div class="container">
-		<h3>회원 수정 폼 입니다.</h3>
+		<h3>회원 수정 폼 입니다</h3>
 		<a id="profileLink" href="javascript:">
 	        <%if(dto.getProfile() == null){%>
 	            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">

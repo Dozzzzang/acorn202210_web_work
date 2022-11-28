@@ -7,6 +7,11 @@
 <title>/users/private/pwd_updateform.jsp</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<style>
+	div{
+		text-align: center;
+	}
+</style>
 </head>
 <body>
 	<%-- /include/navbar.jsp 페이지를 포함시킨다. --%>
@@ -17,16 +22,13 @@
 		<h3 style="text-align: center;">비밀번호 수정 폼</h3>
 		<form action="pwd_update.jsp" method="post" id="myForm">
 			<div>
-				<label for="pwd">기존 비밀번호</label>
-				<input type="password" name="pwd" id="pwd" />
+				<input type="password" name="pwd" id="pwd" placeholder="기존 비밀번호"/>
 			</div>
 			<div>
-				<label for="newPwd">새 비밀번호</label>
-				<input type="password" name="newPwd" id="newPwd" />
+				<input type="password" name="newPwd" id="newPwd" placeholder="새 비밀번호"/>
 			</div>
 			<div>
-				<label for="newPwd2">새 비밀번호 확인</label>
-				<input type="password" id="newPwd2" />
+				<input type="password" id="newPwd2" placeholder="새 비밀번호 확인"/>
 			</div>
 			<button type="submit" class="btn btn-outline-primary">수정하기</button>
 			<button type="reset" class="btn btn-outline-danger">리셋</button>	
