@@ -21,14 +21,10 @@
 		<jsp:param value="" name="thisPage"/>
 	</jsp:include>
 	<div class="container">
-		<%if(id!=null){ %>
+		<%if(id!=null){ %>			
 			<p>
-				<button type="button" class="btn btn-outline-dark btn-sm" onclick = "location.href = '${pageContext.request.contextPath }/users/private/info.jsp' "><%=id %></button> 님 로그인중...
-				<button type="button" class="btn btn-outline-secondary btn-sm" onclick = "location.href = '${pageContext.request.contextPath }/users/logout.jsp' ">로그아웃</button>
-			</p>
-			<p>
-				<button type="button" class="btn btn-link btn-sm" onclick = "location.href = '${pageContext.request.contextPath }/private/study.jsp' ">회원전용공간(공부)</button>
-				<button type="button" class="btn btn-link btn-sm" onclick = "location.href = '${pageContext.request.contextPath }/private/game.jsp' ">회원전용공간(게임)</button>
+				<button type="button" class="btn btn-secondary btn-sm" onclick = "location.href = '${pageContext.request.contextPath }/private/study.jsp' ">회원전용공간(공부)</button>
+				<button type="button" class="btn btn-secondary btn-sm" onclick = "location.href = '${pageContext.request.contextPath }/private/game.jsp' ">회원전용공간(게임)</button>
 			</p>
 			<div class="container" style="text-align:center;">
 				<hr class="border border-1 opacity-0">

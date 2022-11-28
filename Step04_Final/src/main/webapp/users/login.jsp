@@ -39,12 +39,12 @@
       	<%if(isValid) {%>
          	<p class="alert alert-success">
             	<strong><%=dto.getId() %></strong> 님 로그인되었습니다.
-            	<a href="<%=url %>">확인</a>
+            	<a href="<%=url %>" class="btn btn-outline-success">확인</a>
          	</p>
       	<%}else{ %>
-         	<p class="alert alert-danger">
+         	<p class="alert alert-danger">         		
             	아이디 혹은 비밀번호가 틀립니다.
-            	<a href="${pageContext.request.contextPath }/users/loginform.jsp?url=<%=encodedUrl%>">다시시도</a>            
+            	<a href="${pageContext.request.contextPath }/users/loginform.jsp?url=<%=encodedUrl%>" class="btn btn-outline-danger">다시시도</a>            
          	</p>
       	<%} %>
    	</div>
