@@ -31,14 +31,14 @@
 		<jsp:param value="" name="thisPage"/>
 	</jsp:include>
 	<div class="container">
-		<h3 >가입 정보 입니다.</h3>
-        <table>      	
+		<h3 style="text-align: center;">가입 정보 입니다</h3>
+        <table class="table table-stripe">      	
 		<tr>
-            <th>아이디</th>
+            <th class="table-info">아이디</th>
             <td><%=id %></td>
         </tr>
         <tr>
-            <th>프로필 이미지</th>
+            <th class="table-info">프로필 이미지</th>
             <td>
                 <%if(dto.getProfile()==null){ %>
                    <svg id="profileImage" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -51,24 +51,24 @@
             </td>
         </tr>
         <tr>
-            <th>비밀번호</th>
-            <td><a href="pwd_updateform.jsp">수정하기</a></td>
+            <th class="table-info">비밀번호</th>
+            <td><a href="pwd_updateform.jsp" class="btn btn-outline-secondary">수정하기</a></td>
         </tr>
         <tr>
-            <th>이메일</th>
+            <th class="table-info">이메일</th>
             <td><%=dto.getEmail() %></td>
         </tr>
         <tr>
-            <th>가입일</th>
+            <th class="table-info">가입일</th>
             <td><%=dto.getRegdate() %></td>
         </tr>
      	</table>
-      	<a href="updateform.jsp">개인정보 수정</a>
-      	<a href="delete.jsp">회원탈퇴</a>
+      	<a href="updateform.jsp" class="btn btn-outline-primary">개인정보 수정</a>
+      	<a href="javascript:deleteConfirm()" class="btn btn-outline-danger">회원탈퇴</a>
    	</div>
    	<script>
    		function deleteConfirm(){
-   			let idDelete=confirm("확인을 누르면 회원 탈퇴가 됩니다. 탈퇴 하시겠습니까?");
+   			let isDelete=confirm("확인을 누르면 회원 탈퇴가 됩니다. 탈퇴 하시겠습니까?");
    			if(isDelete){
    				location.href="delete.jsp";
    			}

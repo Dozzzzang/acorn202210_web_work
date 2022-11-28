@@ -57,8 +57,8 @@
 				<label for="email">이메일</label>
 				<input type="text" id="email" name="email" value="<%=dto.getEmail() %>" />			
 			</div>
-			<button type="submit">수정확인</button>
-			<button type="reset">취소</button>
+			<button type="submit" class="btn btn-outline-primary">수정확인</button>
+			<button type="reset" class="btn btn-outline-danger">취소</button>
 		</form>
 		
 		<form id="imageForm" action="profile_upload.jsp" method="post" enctype="multipart/form-data">
