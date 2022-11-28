@@ -92,8 +92,8 @@
 		%>
 		<%-- 만일 글 작성자가 로그인된 아이디와 같다면 수정, 삭제 링크를 제공한다. --%>
 		<%if(dto.getWriter().equals(id)){ %>
-			<a href="private/updateform.jsp?num=<%=dto.getNum()%>">수정</a>
-			<a href="javascript:" onclick="deleteConfirm()">삭제</a>
+			<a href="private/updateform.jsp?num=<%=dto.getNum()%>" class="btn btn-outline-primary">수정</a>
+			<a href="javascript:" onclick="deleteConfirm()" class="btn btn-outline-danger">삭제</a>
 			<script>
 				function deleteConfirm(){
 					const isDelete=confirm("이 글을 삭제 하겠습니까?");

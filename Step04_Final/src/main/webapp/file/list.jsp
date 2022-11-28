@@ -67,9 +67,9 @@
 	<jsp:include page="/include/navbar.jsp">
 		<jsp:param value="file" name="thisPage"/>
 	</jsp:include>
-	<div class="container">
-		<a href="${pageContext.request.contextPath }/file/private/upload_form.jsp">업로드 하기</a>
+	<div class="container">		
 		<h3>자료실 목록 보기</h3>
+		<a href="${pageContext.request.contextPath }/file/private/upload_form.jsp" class="btn btn-outline-primary">업로드 하기</a>
 		<table class="table table-striped">
 			<thead class="table-dark">
 				<tr>
@@ -104,7 +104,7 @@
 			</tbody>
 		</table>
 		<nav>
-			<ul class="pagination">
+			<ul class="pagination justify-content-center">
 				<%--
 					startPageNum 이 1 이 아닌 경우에만 Prev 링크를 제공한다.
 				 --%>
@@ -139,5 +139,7 @@
 			}
 		}	
 	</script>
+	<%-- /include/footer.jsp 페이지를 포함시켜서 이부분은 footer.jsp 페이지가 응답하도록 한다. --%>
+	<jsp:include page="/include/footer.jsp"></jsp:include>
 </body>
 </html>

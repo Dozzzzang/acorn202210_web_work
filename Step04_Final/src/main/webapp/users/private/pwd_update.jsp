@@ -35,18 +35,20 @@
 <head>
 <meta charset="UTF-8">
 <title>/users/private/pwd_update.jsp</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </head>
 <body>
 	<div class="container">
 		<%if(isSuccess){ %>
-			<p>
+			<p class="alert alert-success">
 				비밀번호가 수정되어 로그아웃 되었습니다.
-				<a href="${pageContext.request.contextPath }/users/loginform.jsp">로그인 하러가기</a>
+				<a href="${pageContext.request.contextPath }/users/loginform.jsp" class="btn btn-outline-success">로그인 하러가기</a>
 			</p>
 		<%}else{ %>
-			<p>
+			<p class="alert alert-danger">
 				기존 비밀번호가 일치하지 않습니다.
-				<a href="${pageContext.request.contextPath }/users/private/pwd_updateform.jsp">다시 시도</a>
+				<a href="${pageContext.request.contextPath }/users/private/pwd_updateform.jsp" class="btn btn-outline-danger">다시 시도</a>
 			</p>
 		<%} %>
 	</div>

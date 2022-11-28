@@ -33,10 +33,7 @@
 				<button type="button" class="btn btn-outline-warning btn-lg" onclick = "location.href = 'https://daum.net' ">DAUM</button>
 				<button type="button" class="btn btn-outline-primary btn-lg" onclick = "location.href = 'https://us02web.zoom.us/j/2385516187?pwd=NE5aMG5BNGhRMmgrTTRVR1ExMGlpZz09' ">ZOOM강의실</button>
 				<hr class="border border-1 opacity-0">
-			</div>			
-		<%}else{ %>
-			<button type="button" class="btn btn-outline-primary btn-sm" onclick = "location.href = '${pageContext.request.contextPath }/users/loginform.jsp' ">로그인</button>
-			<button type="button" class="btn btn-outline-info btn-sm" onclick = "location.href = '${pageContext.request.contextPath }/users/signup_form.jsp' ">회원가입</button>
+			</div>
 		<%} %>
 	</div>
 	<hr class="border border-1 opacity-0">

@@ -60,7 +60,8 @@
 		<jsp:param value="cafe" name="thisPage"/>
 	</jsp:include>
 	<div class="container">		
-		<h3>카페 글 목록 입니다.</h3>
+		<h3>글 목록 보기</h3>
+		<a href="${pageContext.request.contextPath }/cafe/private/insertform.jsp" class="btn btn-outline-primary">새글 작성</a>
 		<table class="table table-stripe">
 			<thead class="table-dark">
 				<tr>
@@ -113,8 +114,7 @@
 			<%} %>
 		</ul>
 	</nav>
-	<div>
-		<a href="${pageContext.request.contextPath }/cafe/private/insertform.jsp">새글 작성</a>
-	</div>
+	<%-- /include/footer.jsp 페이지를 포함시켜서 이부분은 footer.jsp 페이지가 응답하도록 한다. --%>
+	<jsp:include page="/include/footer.jsp"></jsp:include>
 </body>
 </html>
