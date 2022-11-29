@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
+	pageEncoding="UTF-8"%>
+
 <%@page import="java.io.*"%>
 <%@page import="java.util.UUID"%>
 <%@page import="java.text.SimpleDateFormat"%>
- 
+
 <%
     //파일정보
     String sFileInfo = "";

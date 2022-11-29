@@ -1,7 +1,7 @@
 <%@page import="test.users.dao.UsersDao"%>
 <%@page import="test.users.dto.UsersDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%
 	//1. 수정할 회원의 정보를 읽어와서
 	String id=(String)session.getAttribute("id");

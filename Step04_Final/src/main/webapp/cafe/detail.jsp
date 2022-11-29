@@ -1,7 +1,7 @@
 <%@page import="test.cafe.dao.CafeDao"%>
 <%@page import="test.cafe.dto.CafeDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%
 	//한 페이지에 몇개씩 표시할 것인지
 	final int PAGE_ROW_COUNT=5;
@@ -50,16 +50,25 @@
 <head>
 <meta charset="UTF-8">
 <title>/cafe/detail.jsp</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+	crossorigin="anonymous"></script>
 <style>
-	div { text-align: center; }
+div {
+	text-align: center;
+}
 </style>
 </head>
 <body>
 	<%-- /include/navbar.jsp 페이지를 포함시킨다. --%>
 	<jsp:include page="/include/navbar.jsp">
-		<jsp:param value="cafe" name="thisPage"/>
+		<jsp:param value="cafe" name="thisPage" />
 	</jsp:include>
 	<div class="container">
 		<h3>글 상세 보기</h3>
@@ -71,7 +80,7 @@
 			<tr>
 				<th class="table-secondary">작성자</th>
 				<td><%=dto.getWriter() %></td>
-			</tr>			
+			</tr>
 			<tr>
 				<th class="table-secondary">조회수</th>
 				<td><%=dto.getViewCount() %></td>
@@ -79,7 +88,7 @@
 			<tr>
 				<th class="table-secondary">작성일</th>
 				<td><%=dto.getRegdate() %></td>
-			</tr>			
+			</tr>
 			<tr>
 				<td colspan="2">
 					<div><%=dto.getContent() %></div>
@@ -92,9 +101,10 @@
 		%>
 		<%-- 만일 글 작성자가 로그인된 아이디와 같다면 수정, 삭제 링크를 제공한다. --%>
 		<%if(dto.getWriter().equals(id)){ %>
-			<a href="private/updateform.jsp?num=<%=dto.getNum()%>" class="btn btn-outline-primary">수정</a>
-			<a href="javascript:" onclick="deleteConfirm()" class="btn btn-outline-danger">삭제</a>
-			<script>
+		<a href="private/updateform.jsp?num=<%=dto.getNum()%>"
+			class="btn btn-outline-primary">수정</a> <a href="javascript:"
+			onclick="deleteConfirm()" class="btn btn-outline-danger">삭제</a>
+		<script>
 				function deleteConfirm(){
 					const isDelete=confirm("이 글을 삭제 하겠습니까?");
 					if(isDelete){
@@ -102,7 +112,7 @@
 					}
 				}
 			</script>
-		<%} %>    
+		<%} %>
 	</div>
 </body>
 </html>

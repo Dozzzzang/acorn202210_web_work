@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%
 	String myName="김구라";
 	/*
@@ -34,7 +34,7 @@
 	*/
 	application.setAttribute("companyName", companyName);
 	
-%>    
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,31 +42,51 @@
 <title>/test_el/test02.jsp</title>
 </head>
 <body>
-	<h1> EL 로 page scope 에 저장된 값 추출</h1>
-	<p>내이름은 <strong>${pageScope.myName }</strong></p>
-	<p>내이름은 <strong>${myName }</strong></p>
-	
+	<h1>EL 로 page scope 에 저장된 값 추출</h1>
+	<p>
+		내이름은 <strong>${pageScope.myName }</strong>
+	</p>
+	<p>
+		내이름은 <strong>${myName }</strong>
+	</p>
+
 	<h1>EL 로 request scope 에 저장된 값 추출</h1>
-	<p>너의 이름은 <strong>${requestScope.yourName }</strong></p>
-	<p>너의 이름은 <strong>${yourName }</strong></p>
+	<p>
+		너의 이름은 <strong>${requestScope.yourName }</strong>
+	</p>
+	<p>
+		너의 이름은 <strong>${yourName }</strong>
+	</p>
 	<%-- 위의 EL 은 아래의 코드를 대신할수 있다. --%>
 	<%
 		String result = (String)request.getAttribute("yourName");
 	%>
-	<p>너의 이름은 <strong><%=result %></strong></p>
-	
+	<p>
+		너의 이름은 <strong><%=result %></strong>
+	</p>
+
 	<h1>EL 로 session scope 에 저장된 값 추출</h1>
-	<p>우리 이름은 <strong>${sessionScope.ourName }</strong></p>
-	<p>우리 이름은 <strong>${ourName }</strong></p>
+	<p>
+		우리 이름은 <strong>${sessionScope.ourName }</strong>
+	</p>
+	<p>
+		우리 이름은 <strong>${ourName }</strong>
+	</p>
 	<%-- 위의 EL 은 아래의 코드를 대신할수 있다. --%>
 	<%
 		String result2 = (String)session.getAttribute("ourName");
 	%>
-	<p>우리 이름은 <strong><%=result2 %></strong></p>
-	
+	<p>
+		우리 이름은 <strong><%=result2 %></strong>
+	</p>
+
 	<h1>EL 로 application scope 에 저장된 값 추출</h1>
-	<p>학원 이름은 <strong>${applicationScope.companyName }</strong></p>
-	<p>학원 이름은 <strong>${companyName }</strong></p>
+	<p>
+		학원 이름은 <strong>${applicationScope.companyName }</strong>
+	</p>
+	<p>
+		학원 이름은 <strong>${companyName }</strong>
+	</p>
 </body>
 </html>
 

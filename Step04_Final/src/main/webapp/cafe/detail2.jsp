@@ -1,7 +1,7 @@
 <%@page import="test.cafe.dao.CafeDao"%>
 <%@page import="test.cafe.dto.CafeDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%
 	//자세히 보여줄 글의 번호를 읽어온다.
 	int num=Integer.parseInt(request.getParameter("num"));
@@ -26,7 +26,7 @@
 			<tr>
 				<th>작성자</th>
 				<td><%=dto.getWriter() %></td>
-			</tr>			
+			</tr>
 			<tr>
 				<th>조회수</th>
 				<td><%=dto.getViewCount() %></td>

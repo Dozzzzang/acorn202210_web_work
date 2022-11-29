@@ -4,7 +4,7 @@
 <%@page import="com.oreilly.servlet.MultipartRequest"%>
 <%@page import="java.io.File"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%
 	// 파일 시스템 상에서 webapp 의 upload 폴더 까지의 절대경로를 얻어낸다.
 	String realPath=application.getRealPath("/upload");
@@ -50,16 +50,18 @@
 </head>
 <body>
 	<%if(isSuccess){ %>
-		<p>
-			<%=writer %> 님이 업로드한 <%=orgFileName %> 파일을 저장했습니다.
-			<a href="${pageContext.request.contextPath }/file/list.jsp">목록보기</a>
-		</p>
-		<p><%=realPath %></p>
+	<p>
+		<%=writer %>
+		님이 업로드한
+		<%=orgFileName %>
+		파일을 저장했습니다. <a
+			href="${pageContext.request.contextPath }/file/list.jsp">목록보기</a>
+	</p>
+	<p><%=realPath %></p>
 	<%}else{ %>
-		<p>
-			업로드 실패!
-			<a href="upload_form.jsp">다시 시도</a>
-		</p>
+	<p>
+		업로드 실패! <a href="upload_form.jsp">다시 시도</a>
+	</p>
 	<%} %>
 </body>
 </html>

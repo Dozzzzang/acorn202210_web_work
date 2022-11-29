@@ -1,36 +1,44 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>/cafe/private/insertform.jsp</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+	crossorigin="anonymous"></script>
 <style>
-	textarea{
-		width: 700px;
-		height: 200px;
-	}
+textarea {
+	width: 700px;
+	height: 200px;
+}
 </style>
 </head>
 <body>
 	<%-- /include/navbar.jsp 페이지를 포함시킨다. --%>
 	<jsp:include page="/include/navbar.jsp">
-		<jsp:param value="cafe" name="thisPage"/>
+		<jsp:param value="cafe" name="thisPage" />
 	</jsp:include>
 	<div class="container">
-		<h3 style="text-align:center;">새글 작성 폼입니다.</h3>
+		<h3 style="text-align: center;">새글 작성 폼입니다.</h3>
 		<form action="insert.jsp" method="post">
 			<div>
-				<label for="title">제목</label>
-				<input type="text" name="title" id="title" />
+				<label for="title">제목</label> <input type="text" name="title"
+					id="title" />
 			</div>
 			<div>
 				<label for="content">내용</label>
 				<textarea name="content" id="content" rows="10"></textarea>
 			</div>
-			<button type="submit" onclick="submitContents(this)" class="btn btn-outline-primary">저장</button>
+			<button type="submit" onclick="submitContents(this)"
+				class="btn btn-outline-primary">저장</button>
 		</form>
 	</div>
 	<%--
@@ -47,9 +55,10 @@
 		6. 폼을 제출하고 싶으면  submitContents(this) 라는 javascript 가 
 		      폼 안에 있는 버튼에서 실행되면 된다.
     --%>
-   
+
 	<!-- SmartEditor 에서 필요한 javascript 로딩  -->
-	<script src="${pageContext.request.contextPath }/SmartEditor/js/HuskyEZCreator.js"></script>
+	<script
+		src="${pageContext.request.contextPath }/SmartEditor/js/HuskyEZCreator.js"></script>
 	<script>
 		var oEditors = [];
 		

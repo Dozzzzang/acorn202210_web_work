@@ -2,7 +2,7 @@
 <%@page import="test.users.dao.UsersDao"%>
 <%@page import="test.users.dto.UsersDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%
 	//파라미터를 추출하기 전에 인코딩을 먼저 해줘야 한글이 깨지지 않는다
 	//request.setCharacterEncoding("UTF-8");
@@ -31,22 +31,30 @@
 <head>
 <meta charset="UTF-8">
 <title>/users/login.jsp</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+	crossorigin="anonymous"></script>
 </head>
 <body>
 	<div class="container">
-      	<%if(isValid) {%>
-         	<p class="alert alert-success">
-            	<strong><%=dto.getId() %></strong> 님 로그인되었습니다.
-            	<a href="<%=url %>" class="btn btn-outline-success">확인</a>
-         	</p>
-      	<%}else{ %>
-         	<p class="alert alert-danger">         		
-            	아이디 혹은 비밀번호가 틀립니다.
-            	<a href="${pageContext.request.contextPath }/users/loginform.jsp?url=<%=encodedUrl%>" class="btn btn-outline-danger">다시시도</a>            
-         	</p>
-      	<%} %>
-   	</div>
+		<%if(isValid) {%>
+		<p class="alert alert-success">
+			<strong><%=dto.getId() %></strong> 님 로그인되었습니다. <a href="<%=url %>"
+				class="btn btn-outline-success">확인</a>
+		</p>
+		<%}else{ %>
+		<p class="alert alert-danger">
+			아이디 혹은 비밀번호가 틀립니다. <a
+				href="${pageContext.request.contextPath }/users/loginform.jsp?url=<%=encodedUrl%>"
+				class="btn btn-outline-danger">다시시도</a>
+		</p>
+		<%} %>
+	</div>
 </body>
 </html>

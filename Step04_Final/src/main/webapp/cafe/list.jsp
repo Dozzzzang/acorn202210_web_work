@@ -2,7 +2,7 @@
 <%@page import="test.cafe.dto.CafeDto"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%
 	//한 페이지에 몇개씩 표시할 것인지
 	final int PAGE_ROW_COUNT=5;
@@ -48,20 +48,31 @@
 <head>
 <meta charset="UTF-8">
 <title>/cafe/list.jsp</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-<style>	
-    div { text-align: center; }
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+	crossorigin="anonymous"></script>
+<style>
+div {
+	text-align: center;
+}
 </style>
 </head>
 <body>
 	<%-- /include/navbar.jsp 페이지를 포함시킨다. --%>
 	<jsp:include page="/include/navbar.jsp">
-		<jsp:param value="cafe" name="thisPage"/>
+		<jsp:param value="cafe" name="thisPage" />
 	</jsp:include>
-	<div class="container">		
+	<div class="container">
 		<h3>글 목록 보기</h3>
-		<a href="${pageContext.request.contextPath }/cafe/private/insertform.jsp" class="btn btn-outline-warning" style="float: right;">새글 작성</a>
+		<a
+			href="${pageContext.request.contextPath }/cafe/private/insertform.jsp"
+			class="btn btn-outline-warning" style="float: right;">새글 작성</a>
 		<table class="table table-stripe">
 			<thead class="table-secondary">
 				<tr>
@@ -73,44 +84,40 @@
 				</tr>
 			</thead>
 			<tbody>
-			<%for(CafeDto tmp:list){ %>
+				<%for(CafeDto tmp:list){ %>
 				<tr>
 					<td><%=tmp.getNum() %></td>
 					<td><%=tmp.getWriter() %></td>
-					<td>
-						<a href="detail.jsp?num=<%=tmp.getNum() %>"><%=tmp.getTitle() %></a>
+					<td><a href="detail.jsp?num=<%=tmp.getNum() %>"><%=tmp.getTitle() %></a>
 					</td>
 					<td><%=tmp.getViewCount() %></td>
 					<td><%=tmp.getRegdate() %></td>
 				</tr>
-			<%} %>
+				<%} %>
 			</tbody>
 		</table>
-	</div>	
+	</div>
 	<nav>
 		<ul class="pagination justify-content-center">
 			<%--
 				startPageNum 이 1 이 아닌 경우에만 Prev 링크를 제공한다.
 			 --%>
 			<%if(startPageNum != 1){ %>
-				<li class="page-item">
-					<a class="page-link" href="list.jsp?pageNum=<%=startPageNum-1 %>">Prev</a>
-				</li>
+			<li class="page-item"><a class="page-link"
+				href="list.jsp?pageNum=<%=startPageNum-1 %>">Prev</a></li>
 			<%} %>
-			
+
 			<%for(int i=startPageNum; i<=endPageNum; i++){ %>
-				<li class="page-item <%=pageNum ==i ? "active" : "" %>">
-					<a class="page-link" href="list.jsp?pageNum=<%=i %>"><%=i %></a>
-				</li>
+			<li class="page-item <%=pageNum ==i ? "active" : "" %>"><a
+				class="page-link" href="list.jsp?pageNum=<%=i %>"><%=i %></a></li>
 			<%} %>
-			
+
 			<%--
 				마지막 페이지 번호가 전체 페이지의 갯수보다 작으면 Next 링크를 제공한다.
 			 --%>
 			<%if(endPageNum < totalPageCount){ %>
-				<li class="page-item">
-					<a class="page-link" href="list.jsp?pageNum=<%=endPageNum+1 %>">Next</a>
-				</li>
+			<li class="page-item"><a class="page-link"
+				href="list.jsp?pageNum=<%=endPageNum+1 %>">Next</a></li>
 			<%} %>
 		</ul>
 	</nav>

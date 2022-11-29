@@ -4,8 +4,9 @@
 <%@page import="java.io.FileInputStream"%>
 <%@page import="test.file.dao.FileDao"%>
 <%@page import="test.file.dto.FileDto"%>
-<%@ page language="java" contentType="application/octet-stream; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java"
+	contentType="application/octet-stream; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%
 	//1. GET 방식 파라미터로 전달되는 다운로드 시켜줄 파일의 번호를 읽어온다.
 	int num=Integer.parseInt(request.getParameter("num"));

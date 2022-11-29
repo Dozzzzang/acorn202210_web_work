@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%
 	Cookie cook=new Cookie("savedId", "kimgura");
 	cook.setMaxAge(60);
 	response.addCookie(cook);
-%>    
+%>
 <!DOCTYPE html>
 <html>
 <head>

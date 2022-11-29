@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,8 +9,8 @@
 <body>
 	<h3>ajax form 예제</h3>
 	<form action="insert.jsp" method="post" id="myForm">
-		<input type="text" name="name" placeholder="이름 입력..." />
-		<input type="text" name="addr" placeholder="주소 입력..." />
+		<input type="text" name="name" placeholder="이름 입력..." /> <input
+			type="text" name="addr" placeholder="주소 입력..." />
 		<button type="submit">추가</button>
 	</form>
 	<script src="${pageContext.request.contextPath }/js/gura_util.js"></script>

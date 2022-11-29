@@ -1,6 +1,6 @@
 <%@page import="java.net.URLDecoder"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%
 	//HttpServletRequest 객체를 이용해서 요청과 함께 전달된 쿠키 읽어내기
 	Cookie[] cooks=request.getCookies();
@@ -17,7 +17,7 @@
 			}
 		}
 	}
-%>    
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,8 +25,10 @@
 <title>/test/cookie_read2.jsp</title>
 </head>
 <body>
-<p>savedMsg  라는 키값으로 저장된 문자열 : <%=savedMsg %></p>
-<a href="cookie_form2.jsp">다시 테스트</a>
+	<p>
+		savedMsg 라는 키값으로 저장된 문자열 :
+		<%=savedMsg %></p>
+	<a href="cookie_form2.jsp">다시 테스트</a>
 </body>
 </html>
 

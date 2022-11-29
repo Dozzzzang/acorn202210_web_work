@@ -1,7 +1,7 @@
 <%@page import="com.oreilly.servlet.MultipartRequest"%>
 <%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
 <%@ page language="java" contentType="application/json; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%
 	//1. 파일을 저장할 서버에서의 실제 경로 구성하기
 	String realPath=application.getRealPath("/upload");

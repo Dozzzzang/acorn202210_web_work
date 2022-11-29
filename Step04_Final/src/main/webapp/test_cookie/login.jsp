@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%
 	//가상의 로그인 페이지
 	String id=request.getParameter("id");
@@ -32,7 +32,9 @@
 <title>쿠키 테스트 페이지</title>
 </head>
 <body>
-	<p><%=id %> 님 로그인 되었습니다.</p>
+	<p><%=id %>
+		님 로그인 되었습니다.
+	</p>
 	<a href="cookie_form3.jsp">다시 테스트</a>
 </body>
 </html>

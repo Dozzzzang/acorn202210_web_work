@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
+	pageEncoding="UTF-8"%>
+
 <%@page import="java.io.FileOutputStream"%>
 <%@page import="java.io.OutputStream"%>
 <%@page import="java.io.InputStream"%>
@@ -11,7 +11,7 @@
 <%@page import="java.util.List"%>
 <%@page import="org.apache.commons.fileupload.disk.DiskFileItemFactory"%>
 <%@page import="org.apache.commons.fileupload.servlet.ServletFileUpload"%>
- 
+
 <%
 String return1="";
 String return2="";

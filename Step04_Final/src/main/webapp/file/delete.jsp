@@ -2,7 +2,7 @@
 <%@page import="test.file.dao.FileDao"%>
 <%@page import="test.file.dto.FileDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%
 	//1. 삭제할 파일 번호를 읽어온다.
 	int num=Integer.parseInt(request.getParameter("num"));
