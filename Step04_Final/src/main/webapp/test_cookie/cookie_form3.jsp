@@ -44,7 +44,7 @@
 			<td></td>
 			<td>
 				<label>
-					<input type="checkbox" name="isSave" value="yes"/>
+					<input type="checkbox" name="isSave" value="yes" ${ not empty cookie.savedId ? 'checked':'' }/>
 					로그인 정보 저장
 				</label>
 			</td>
