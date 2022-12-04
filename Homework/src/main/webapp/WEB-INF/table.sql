@@ -31,3 +31,10 @@ CREATE TABLE board_cafe(
 );
 -- 게시글의 번호를 얻어낼 시퀀스
 CREATE SEQUENCE board_cafe_seq;
+
+--챗 테이블 만들기
+CREATE TABLE chat(
+	chatName VARCHAR(20),
+	chatContent VARCHAR(200),
+	chatTime DATETIME
+);

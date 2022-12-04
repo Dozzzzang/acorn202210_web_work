@@ -7,7 +7,7 @@
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
-
+	
 	<!-- DB 접속 설정 -->
 	<resource-ref>
 		<description>Oracle Datasource example</description>
