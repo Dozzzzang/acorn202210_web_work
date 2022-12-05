@@ -27,8 +27,7 @@
 		<jsp:param value="" name="thisPage" />
 	</jsp:include>
 	<div>
-		<%if(id!=null){ %>
-			<div class="container border-0 bd-example bg-light" style="overflow: scroll; ">
+		<%if(id!=null){ %>			
 				<%for(ChatDto tmp:list){ %>
 					<figure class="text-end">
 						<blockquote class="blockquote">
@@ -39,7 +38,6 @@
 						</figcaption>						
 					</figure>
 				<%} %>
-			</div>
 		<%} %>
 	</div>
 	<form action="send.jsp" method="post" name="chatForm">

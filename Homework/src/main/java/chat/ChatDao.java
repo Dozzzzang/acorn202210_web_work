@@ -32,20 +32,17 @@ public class ChatDao {
 			conn = new DbcpBean().getConn();
 			//실행할 sql 문의 뼈대 구성하기
 			String sql = "SELECT * FROM CHAT"
-					+ " WHERE chatTime > ?"
-					+ " ORDER BY chatTime";
+					+ " ORDER BY num DESC";
 			pstmt = conn.prepareStatement(sql);
 			//sql 문의 ? 에 바인딩 할게 있으면 한다.
-			pstmt.setString(1, dto.chatTime);			
+					
 			//SELECT 문을 수행하고 결과값을 받아온다.
 			rs = pstmt.executeQuery();
-			list = new ArrayList<ChatDto>();
 			//반복문 돌면서 ResultSet 에서 필요한 값을 얻어낸다.
 			while (rs.next()) {
 				ChatDto chat = new ChatDto();
 				chat.setChatName(rs.getString("chatName"));
 				chat.setChatContent(rs.getString("chatContent"));
-				chat.setChatTime(rs.getString("chatTime"));
 				list.add(chat);
 			}
 		} catch (Exception e) {
@@ -72,11 +69,11 @@ public class ChatDao {
 			conn = new DbcpBean().getConn();
 			//실행할 sql 문
 			String sql = "INSERT INTO CHAT VALUES"
-					+ " (?, ?, sysdate)";
+					+ " (chat_seq.NEXTVAL, ?, ?)";
 			pstmt = conn.prepareStatement(sql);
 			//? 값을 바인딩 할게 있으면 바인딩하기
-			pstmt.setString(1, dto.chatName);
-			pstmt.setString(2, dto.chatContent);
+			pstmt.setString(1, dto.getChatName());
+			pstmt.setString(2, dto.getChatContent());
 			//insert, update, delete 를 수행하고 변화된 row의 갯수를 리턴받기
 			rowCount=pstmt.executeUpdate();
 		} catch (Exception e) {

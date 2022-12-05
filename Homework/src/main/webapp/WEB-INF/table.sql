@@ -34,7 +34,9 @@ CREATE SEQUENCE board_cafe_seq;
 
 --챗 테이블 만들기
 CREATE TABLE chat(
-	chatName VARCHAR(20),
-	chatContent VARCHAR(200),
-	chatTime DATE
+	num NUMBER PRIMARY KEY,
+	chatName VARCHAR(20) NOT NULL,
+	chatContent VARCHAR(200) NOT NULL	
 );
+
+CREATE SEQUENCE chat_seq;
