@@ -22,7 +22,7 @@ public class ChatDao {
 	}
 	
 	public List<ChatDto> getChatList(ChatDto dto){
-		List<ChatDto> chatList = new ArrayList<ChatDto>();
+		List<ChatDto> list = new ArrayList<ChatDto>();
 		//필요한 객체를 담을 지역변수를 미리 만들어 둔다.
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -39,14 +39,14 @@ public class ChatDao {
 			pstmt.setString(1, dto.chatTime);			
 			//SELECT 문을 수행하고 결과값을 받아온다.
 			rs = pstmt.executeQuery();
-			chatList = new ArrayList<ChatDto>();
+			list = new ArrayList<ChatDto>();
 			//반복문 돌면서 ResultSet 에서 필요한 값을 얻어낸다.
 			while (rs.next()) {
-				ChatDto chat = new ChatDto(sql, sql, sql);
+				ChatDto chat = new ChatDto();
 				chat.setChatName(rs.getString("chatName"));
 				chat.setChatContent(rs.getString("chatContent"));
 				chat.setChatTime(rs.getString("chatTime"));
-				chatList.add(chat);
+				list.add(chat);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -61,7 +61,7 @@ public class ChatDao {
 			} catch (Exception e) {
 			}
 		}
-		return chatList;
+		return list;
 	}
 	
 	public boolean insert(ChatDto dto) {
@@ -72,7 +72,7 @@ public class ChatDao {
 			conn = new DbcpBean().getConn();
 			//실행할 sql 문
 			String sql = "INSERT INTO CHAT VALUES"
-					+ " (?, ?, now())";
+					+ " (?, ?, sysdate)";
 			pstmt = conn.prepareStatement(sql);
 			//? 값을 바인딩 할게 있으면 바인딩하기
 			pstmt.setString(1, dto.chatName);

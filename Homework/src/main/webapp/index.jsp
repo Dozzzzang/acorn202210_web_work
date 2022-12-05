@@ -1,3 +1,4 @@
+<%@page import="chat.ChatDao"%>
 <%@page import="java.util.List"%>
 <%@page import="chat.ChatDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -5,6 +6,9 @@
 <%
 	//session scope 에 id 라는 키값으로 저장된 값이 있는지 읽어와 본다. (없으면 null)
 	String id=(String)session.getAttribute("id");
+	
+	ChatDto dto = new ChatDto();
+	List<ChatDto> list = ChatDao.getInstance().getChatList(dto);
 %>
 <!DOCTYPE html>
 <html>
@@ -22,29 +26,24 @@
 	<jsp:include page="/include/navbar.jsp">
 		<jsp:param value="" name="thisPage" />
 	</jsp:include>
-	<div class="container">
+	<div>
 		<%if(id!=null){ %>
-		<div class="row">
-			<div class="col-xs-12">
-				<div>
-					<h3 style="text-align: center;">실시간 채팅방</h3>
-				</div>
-				<div class="clearfix"></div>
-				<div>
-					<%for(ChatDto tmp:list){ %>
-					<p><%=tmp.getChatName() %></p>
-					<p><%=tmp.getChatContent() %></p>
-					<p><%=tmp.getChatTime() %></p>
-					<%} %>
-				</div>
+			<div class="container border-0 bd-example bg-light" style="overflow: scroll; ">
+				<%for(ChatDto tmp:list){ %>
+					<figure class="text-end">
+						<blockquote class="blockquote">
+							<p><%=tmp.getChatContent() %></p>
+						</blockquote>
+						<figcaption class="blockqueote-footer">
+						<%=tmp.getChatName() %>
+						</figcaption>						
+					</figure>
+				<%} %>
 			</div>
-			<form action="/Homework/chatsend.jsp" method="post">
-			<input type="text" name="chatContent" placeholder="서버에 할말 입력..." />
-			<button type="summit">전송</button>
-		</form>
-		</div>
 		<%} %>
-	</div>	
+	</div>
+	<form action="" method="post" name="chatForm">
+	</form>
 	
 	<%-- /include/footer.jsp 페이지를 포함시켜서 이부분은 footer.jsp 페이지가 응답하도록 한다. --%>
 	<jsp:include page="/include/footer.jsp"></jsp:include>

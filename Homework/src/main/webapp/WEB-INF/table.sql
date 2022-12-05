@@ -36,5 +36,5 @@ CREATE SEQUENCE board_cafe_seq;
 CREATE TABLE chat(
 	chatName VARCHAR(20),
 	chatContent VARCHAR(200),
-	chatTime DATETIME
+	chatTime DATE
 );

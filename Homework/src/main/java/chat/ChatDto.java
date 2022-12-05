@@ -4,13 +4,7 @@ public class ChatDto {
 	String chatName;
 	String chatContent;
 	String chatTime;	
-
-	public ChatDto(String chatName, String chatContent, String chatTime) {
-		super();
-		this.chatName = chatName;
-		this.chatContent = chatContent;
-		this.chatTime = chatTime;
-	}
+	
 	public String getChatName() {
 		return chatName;
 	}
