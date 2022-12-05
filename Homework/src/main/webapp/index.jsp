@@ -40,6 +40,9 @@
 				<%} %>
 		<%} %>
 	</div>
+	<div style="text-align:center;">
+		<h3>방명록 쓰기</h3>
+	</div>	
 	<form action="send.jsp" method="post" name="chatForm">
 		<div class="container row">
 			<label for="chatName" class="col-sm-2 col-form-label">닉네임</label>
