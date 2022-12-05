@@ -42,7 +42,18 @@
 			</div>
 		<%} %>
 	</div>
-	<form action="" method="post" name="chatForm">
+	<form action="send.jsp" method="post" name="chatForm">
+		<div class="container row">
+			<label for="chatName" class="col-sm-2 col-form-label">닉네임</label>
+			<div class="col-sm-3">
+				<input class="form-control" type="text" name="chatName" id="chatName"/>
+			</div>			
+		</div>
+		<div class="container row">
+			<label for="chatContent">내용</label>
+			<textarea class="form-control" name="chatContent" id="chatContent" rows="4"></textarea>
+		</div>
+		<button class="btn btn-outline-primary" type="submit">전송</button>
 	</form>
 	
 	<%-- /include/footer.jsp 페이지를 포함시켜서 이부분은 footer.jsp 페이지가 응답하도록 한다. --%>
