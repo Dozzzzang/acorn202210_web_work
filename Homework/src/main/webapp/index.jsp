@@ -29,12 +29,12 @@
 	<div>
 		<%if(id!=null){ %>			
 				<%for(ChatDto tmp:list){ %>
-					<figure class="text-end">
+					<figure class="text-center">
 						<blockquote class="blockquote">
 							<p><%=tmp.getChatContent() %></p>
 						</blockquote>
-						<figcaption class="blockqueote-footer">
-						<%=tmp.getChatName() %>
+						<figcaption class="blockquote-footer">
+							<cite><%=tmp.getChatName() %></cite>
 						</figcaption>						
 					</figure>
 				<%} %>
