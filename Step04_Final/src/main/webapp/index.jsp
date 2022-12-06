@@ -4,6 +4,7 @@
 	//session scope 에 id 라는 키값으로 저장된 값이 있는지 읽어와 본다. (없으면 null)
 	String id=(String)session.getAttribute("id");
 %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,26 +31,28 @@ div {
 		<jsp:param value="" name="thisPage" />
 	</jsp:include>
 	<div class="container">
-		<%if(id!=null){ %>
-		<p>
-			<button type="button" class="btn btn-secondary btn-sm"
-				onclick="location.href = '${pageContext.request.contextPath }/private/study.jsp' ">회원전용공간(공부)</button>
-			<button type="button" class="btn btn-secondary btn-sm"
-				onclick="location.href = '${pageContext.request.contextPath }/private/game.jsp' ">회원전용공간(게임)</button>
-		</p>
-		<div class="container" style="text-align: center;">
-			<hr class="border border-1 opacity-0">
-			<button type="button" class="btn btn-outline-success btn-lg"
-				onclick="location.href = 'https://naver.com' ">NAVER</button>
-			<button type="button" class="btn btn-outline-danger btn-lg"
-				onclick="location.href = 'https://google.com' ">GOOGLE</button>
-			<button type="button" class="btn btn-outline-warning btn-lg"
-				onclick="location.href = 'https://daum.net' ">DAUM</button>
-			<button type="button" class="btn btn-outline-primary btn-lg"
-				onclick="location.href = 'https://us02web.zoom.us/j/2385516187?pwd=NE5aMG5BNGhRMmgrTTRVR1ExMGlpZz09' ">ZOOM강의실</button>
-			<hr class="border border-1 opacity-0">
-		</div>
-		<%} %>
+		<c:choose>
+			<c:when test="${ not empty id }">
+				<p>
+					<button type="button" class="btn btn-secondary btn-sm"
+						onclick="location.href = '${pageContext.request.contextPath }/private/study.jsp' ">회원전용공간(공부)</button>
+					<button type="button" class="btn btn-secondary btn-sm"
+						onclick="location.href = '${pageContext.request.contextPath }/private/game.jsp' ">회원전용공간(게임)</button>
+				</p>
+				<div class="container" style="text-align: center;">
+					<hr class="border border-1 opacity-0">
+					<button type="button" class="btn btn-outline-success btn-lg"
+						onclick="location.href = 'https://naver.com' ">NAVER</button>
+					<button type="button" class="btn btn-outline-danger btn-lg"
+						onclick="location.href = 'https://google.com' ">GOOGLE</button>
+					<button type="button" class="btn btn-outline-warning btn-lg"
+						onclick="location.href = 'https://daum.net' ">DAUM</button>
+					<button type="button" class="btn btn-outline-primary btn-lg"
+						onclick="location.href = 'https://us02web.zoom.us/j/2385516187?pwd=NE5aMG5BNGhRMmgrTTRVR1ExMGlpZz09' ">ZOOM강의실</button>
+					<hr class="border border-1 opacity-0">			
+				</div>		
+			</c:when>
+		</c:choose>
 	</div>
 	<hr class="border border-1 opacity-0">
 	<div class="container" style="text-align: center;">
